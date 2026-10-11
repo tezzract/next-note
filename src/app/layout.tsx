@@ -14,15 +14,20 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html suppressHydrationWarning>
-      <body className="min-h-full flex flex-col"><ThemeProvider
+      <body className="min-h-full flex flex-col">
+      <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
-            {children}
+            <div className="flex-1 flex flex-col min-h-screen w-full">
+              <Header />
+              
+            <main className="flex flex-1 flex-col px-4 pt-10 xl:px-8">
+            {children} </main>
+            </div>
             
-            <div><Header/></div>
 
                       
             
